@@ -2,15 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&display=swap');
 
 :root {
-  --r-bg: #0a0f0a;
-  --r-bg2: #101a10;
-  --r-bg3: #162416;
-  --r-line: #1f5f2e;
-  --r-green: #33ff66;
-  --r-dim: #1fa84a;
-  --r-amber: #ffb000;
+  --r-bg: #050b14;
+  --r-bg2: #0a1624;
+  --r-bg3: #10233a;
+  --r-line: #1d5a8a;
+  --r-green: #33ff99;
+  --r-dim: #1fb37a;
+  --r-amber: #3da9ff;
   --r-red: #ff4d4d;
-  --r-glow: 0 0 6px rgba(51,255,102,.55);
+  --r-glow: 0 0 6px rgba(51,255,153,.55);
 }
 
 /* --- global --- */
@@ -41,7 +41,7 @@ body { animation: r-flicker 4s infinite; }
 h1, h2, h3, h4, .box-title, .content-header > h1 {
   font-family: 'Press Start 2P', 'VT323', monospace !important;
   color: var(--r-amber) !important;
-  text-shadow: 0 0 6px rgba(255,176,0,.5);
+  text-shadow: 0 0 6px rgba(61,169,255,.5);
   line-height: 1.5;
 }
 h1 { font-size: 20px !important; } h2 { font-size: 16px !important; } h3,h4 { font-size: 13px !important; }
@@ -74,9 +74,9 @@ a:hover { color: #fff !important; text-shadow: var(--r-glow); }
 
 /* navbar */
 #NavigationBar, nav.bg-neutral-900, nav.bg-gray-900 {
-  background: #050805 !important;
+  background: #030710 !important;
   border-bottom: 2px solid var(--r-green) !important;
-  box-shadow: 0 2px 12px rgba(51,255,102,.25) !important;
+  box-shadow: 0 2px 12px rgba(51,255,153,.25) !important;
 }
 
 /* tombol cyan (primary) jadi amber */
@@ -86,7 +86,7 @@ a:hover { color: #fff !important; text-shadow: var(--r-glow); }
   border: 2px solid #000 !important;
 }
 .hover\:bg-cyan-500:hover, .hover\:bg-cyan-600:hover, .hover\:bg-primary-500:hover {
-  background-color: #ffd36b !important;
+  background-color: #8fcfff !important;
 }
 .text-cyan-400, .text-cyan-500, .text-cyan-600, .text-primary-400, .text-primary-500 {
   color: var(--r-amber) !important;
@@ -105,13 +105,13 @@ button:active { transform: translate(2px, 2px); }
 
 /* input */
 input, textarea, select {
-  background: #050805 !important; color: var(--r-green) !important;
+  background: #030710 !important; color: var(--r-green) !important;
   border: 2px solid var(--r-line) !important; font-family: 'VT323', monospace !important;
   font-size: 20px !important; caret-color: var(--r-amber);
 }
 input:focus, textarea:focus, select:focus {
   border-color: var(--r-amber) !important; outline: none !important;
-  box-shadow: 0 0 8px rgba(255,176,0,.5) !important;
+  box-shadow: 0 0 8px rgba(61,169,255,.5) !important;
 }
 input::placeholder { color: var(--r-dim) !important; opacity: .7; }
 
@@ -124,15 +124,15 @@ input::placeholder { color: var(--r-dim) !important; opacity: .7; }
 
 /* scrollbar retro */
 ::-webkit-scrollbar { width: 14px; height: 14px; }
-::-webkit-scrollbar-track { background: #050805; border-left: 2px solid var(--r-line); }
-::-webkit-scrollbar-thumb { background: var(--r-dim); border: 2px solid #050805; }
+::-webkit-scrollbar-track { background: #030710; border-left: 2px solid var(--r-line); }
+::-webkit-scrollbar-thumb { background: var(--r-dim); border: 2px solid #030710; }
 ::-webkit-scrollbar-thumb:hover { background: var(--r-green); }
 
 /* ===== ADMIN PANEL (AdminLTE) ===== */
 .skin-blue .main-header .navbar,
 .skin-blue .main-header .logo,
 .skin-blue .main-header li.user-header {
-  background: #050805 !important;
+  background: #030710 !important;
   border-bottom: 2px solid var(--r-green);
   font-family: 'Press Start 2P', monospace !important; font-size: 12px;
   color: var(--r-green) !important;
@@ -140,15 +140,15 @@ input::placeholder { color: var(--r-dim) !important; opacity: .7; }
 .skin-blue .main-header .navbar .nav > li > a { color: var(--r-green) !important; }
 .skin-blue .main-header .navbar .nav > li > a:hover { background: var(--r-bg3) !important; }
 
-.skin-blue .main-sidebar, .skin-blue .left-side, .skin-blue .wrapper { background: #070b07 !important; }
+.skin-blue .main-sidebar, .skin-blue .left-side, .skin-blue .wrapper { background: #040a14 !important; }
 .skin-blue .sidebar-menu > li > a { color: var(--r-green) !important; border-left: 3px solid transparent; }
 .skin-blue .sidebar-menu > li.active > a,
 .skin-blue .sidebar-menu > li:hover > a {
   background: var(--r-bg3) !important; color: var(--r-amber) !important;
   border-left: 3px solid var(--r-amber);
 }
-.skin-blue .sidebar-menu > li.header { background: #050805 !important; color: var(--r-dim) !important; }
-.skin-blue .sidebar-menu .treeview-menu { background: #050805 !important; }
+.skin-blue .sidebar-menu > li.header { background: #030710 !important; color: var(--r-dim) !important; }
+.skin-blue .sidebar-menu .treeview-menu { background: #030710 !important; }
 
 .content-wrapper, .right-side, .main-footer {
   background: var(--r-bg) !important; border: 0 !important; color: var(--r-green) !important;
@@ -176,4 +176,4 @@ input::placeholder { color: var(--r-dim) !important; opacity: .7; }
 .callout, .alert { background: var(--r-bg3) !important; border: 2px solid var(--r-amber) !important; color: var(--r-amber) !important; }
 
 /* ===== halaman login ===== */
-#app > div:first-child form { border: 2px solid var(--r-green); box-shadow: 0 0 24px rgba(51,255,102,.3); }
+#app > div:first-child form { border: 2px solid var(--r-green); box-shadow: 0 0 24px rgba(51,255,153,.3); }
