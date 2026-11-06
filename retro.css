@@ -177,3 +177,38 @@ input::placeholder { color: var(--r-dim) !important; opacity: .7; }
 
 /* ===== halaman login ===== */
 #app > div:first-child form { border: 2px solid var(--r-green); box-shadow: 0 0 24px rgba(51,255,153,.3); }
+
+/* ===== LITE OVERRIDES ===== */
+body::before, body::after { display: none !important; }
+body { animation: none !important; }
+
+h1, h2, h3, h4, .box-title, .content-header > h1 {
+  font-family: 'VT323', monospace !important;
+  font-size: 24px !important; text-shadow: none !important; letter-spacing: 1px;
+}
+h2 { font-size: 21px !important; } h3, h4 { font-size: 18px !important; }
+button, .btn {
+  font-family: 'VT323', monospace !important;
+  font-size: 18px !important; text-transform: none !important; letter-spacing: .5px;
+}
+.skin-blue .main-header .navbar, .skin-blue .main-header .logo {
+  font-family: 'VT323', monospace !important; font-size: 18px !important;
+}
+input, textarea, select { font-size: 18px !important; }
+html, body, #app { font-size: 18px !important; }
+
+.bg-gray-700, .bg-gray-600, .bg-neutral-700, .bg-neutral-600 { border: 1px solid var(--r-line) !important; }
+.box, .small-box, .info-box, .modal-content { border-width: 1px !important; border-top-width: 2px !important; }
+.bg-cyan-400, .bg-cyan-500, .bg-cyan-600, .bg-cyan-700,
+.bg-primary-400, .bg-primary-500, .bg-primary-600, .bg-primary-700,
+.btn-primary, .btn-success, .btn-info, .btn-danger { border: 0 !important; }
+#app > div:first-child form { box-shadow: none !important; }
+
+/* ===== FIX LAYOUT ADMIN ===== */
+.content-header > h1 small {
+  display: block; margin: 4px 0 0 0; font-size: 16px !important;
+  color: var(--r-dim) !important; font-family: 'VT323', monospace !important;
+}
+.content-header > .breadcrumb { font-size: 15px !important; }
+.btn-app, .btn { white-space: nowrap; overflow: visible; }
+.btn { padding: 6px 14px !important; }
