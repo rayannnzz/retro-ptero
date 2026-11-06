@@ -4,7 +4,7 @@
 set -e
 
 # Ganti sesuai repo GitHub kamu
-REPO="${RETRO_REPO:-rayannnzz/pterodactyl-retro-theme}"
+REPO="${RETRO_REPO:-rayannnzz/retro-ptero}"
 BRANCH="${RETRO_BRANCH:-main}"
 RAW="https://raw.githubusercontent.com/$REPO/$BRANCH"
 

@@ -5,12 +5,12 @@ Tanpa `yarn build` — CSS di-inject lewat Blade.
 
 ## Install
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/rayannnzz/pterodactyl-retro-theme/main/install.sh) install
+bash <(curl -fsSL https://raw.githubusercontent.com/rayannnzz/retro-ptero/main/install.sh) install
 ```
 
 ## Uninstall
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/rayannnzz/pterodactyl-retro-theme/main/install.sh) uninstall
+bash <(curl -fsSL https://raw.githubusercontent.com/rayannnzz/retro-ptero/main/install.sh) uninstall
 ```
 
 Panel di path lain: `PTERO_DIR=/path/panel bash <(curl ...) install`
