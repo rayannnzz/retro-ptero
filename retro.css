@@ -1,0 +1,179 @@
+/* ===== Pterodactyl Retro CRT Theme ===== */
+@import url('https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&display=swap');
+
+:root {
+  --r-bg: #0a0f0a;
+  --r-bg2: #101a10;
+  --r-bg3: #162416;
+  --r-line: #1f5f2e;
+  --r-green: #33ff66;
+  --r-dim: #1fa84a;
+  --r-amber: #ffb000;
+  --r-red: #ff4d4d;
+  --r-glow: 0 0 6px rgba(51,255,102,.55);
+}
+
+/* --- global --- */
+html, body, #app {
+  background: var(--r-bg) !important;
+  color: var(--r-green) !important;
+  font-family: 'VT323', 'Courier New', monospace !important;
+  font-size: 19px;
+  letter-spacing: .3px;
+}
+* { border-radius: 0 !important; box-shadow: none; }
+*::selection { background: var(--r-amber); color: #000; }
+
+/* scanlines + vignette */
+body::before {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 99999;
+  background: repeating-linear-gradient(to bottom,
+    rgba(0,0,0,0) 0, rgba(0,0,0,0) 2px, rgba(0,0,0,.22) 3px);
+}
+body::after {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 99998;
+  background: radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,.55) 100%);
+}
+@keyframes r-flicker { 0%,100%{opacity:1} 50%{opacity:.985} 52%{opacity:.96} }
+body { animation: r-flicker 4s infinite; }
+
+/* headings pakai font pixel */
+h1, h2, h3, h4, .box-title, .content-header > h1 {
+  font-family: 'Press Start 2P', 'VT323', monospace !important;
+  color: var(--r-amber) !important;
+  text-shadow: 0 0 6px rgba(255,176,0,.5);
+  line-height: 1.5;
+}
+h1 { font-size: 20px !important; } h2 { font-size: 16px !important; } h3,h4 { font-size: 13px !important; }
+
+a { color: var(--r-amber) !important; }
+a:hover { color: #fff !important; text-shadow: var(--r-glow); }
+
+/* ===== CLIENT AREA (React / Tailwind) ===== */
+.bg-gray-900, .bg-gray-800 { background-color: var(--r-bg) !important; }
+.bg-gray-700, .bg-gray-600 { background-color: var(--r-bg2) !important; }
+.bg-gray-500, .bg-gray-400 { background-color: var(--r-bg3) !important; }
+.bg-neutral-900, .bg-neutral-800 { background-color: var(--r-bg) !important; }
+.bg-neutral-700, .bg-neutral-600 { background-color: var(--r-bg2) !important; }
+.bg-neutral-500 { background-color: var(--r-bg3) !important; }
+
+.text-gray-50, .text-gray-100, .text-gray-200, .text-gray-300,
+.text-neutral-50, .text-neutral-100, .text-neutral-200, .text-neutral-300 { color: var(--r-green) !important; }
+.text-gray-400, .text-gray-500, .text-neutral-400, .text-neutral-500 { color: var(--r-dim) !important; }
+.text-white { color: #d8ffe2 !important; }
+
+.border-gray-500, .border-gray-600, .border-gray-700, .border-gray-800,
+.border-neutral-500, .border-neutral-600, .border-neutral-700 {
+  border-color: var(--r-line) !important;
+}
+
+/* kartu / blok */
+.bg-gray-700, .bg-gray-600, .bg-neutral-700, .bg-neutral-600 {
+  border: 2px solid var(--r-line);
+}
+
+/* navbar */
+#NavigationBar, nav.bg-neutral-900, nav.bg-gray-900 {
+  background: #050805 !important;
+  border-bottom: 2px solid var(--r-green) !important;
+  box-shadow: 0 2px 12px rgba(51,255,102,.25) !important;
+}
+
+/* tombol cyan (primary) jadi amber */
+.bg-cyan-400, .bg-cyan-500, .bg-cyan-600, .bg-cyan-700,
+.bg-primary-400, .bg-primary-500, .bg-primary-600, .bg-primary-700 {
+  background-color: var(--r-amber) !important; color: #000 !important;
+  border: 2px solid #000 !important;
+}
+.hover\:bg-cyan-500:hover, .hover\:bg-cyan-600:hover, .hover\:bg-primary-500:hover {
+  background-color: #ffd36b !important;
+}
+.text-cyan-400, .text-cyan-500, .text-cyan-600, .text-primary-400, .text-primary-500 {
+  color: var(--r-amber) !important;
+}
+.border-cyan-400, .border-cyan-500, .border-cyan-600, .border-primary-400, .border-primary-500 {
+  border-color: var(--r-amber) !important;
+}
+
+/* tombol merah / hijau status */
+.bg-red-500, .bg-red-600, .bg-red-700 { background-color: var(--r-red) !important; color: #000 !important; }
+.bg-green-500, .bg-green-600, .bg-green-700 { background-color: var(--r-green) !important; color: #000 !important; }
+
+button, .btn { font-family: 'Press Start 2P', monospace !important; font-size: 11px !important;
+  text-transform: uppercase; }
+button:active { transform: translate(2px, 2px); }
+
+/* input */
+input, textarea, select {
+  background: #050805 !important; color: var(--r-green) !important;
+  border: 2px solid var(--r-line) !important; font-family: 'VT323', monospace !important;
+  font-size: 20px !important; caret-color: var(--r-amber);
+}
+input:focus, textarea:focus, select:focus {
+  border-color: var(--r-amber) !important; outline: none !important;
+  box-shadow: 0 0 8px rgba(255,176,0,.5) !important;
+}
+input::placeholder { color: var(--r-dim) !important; opacity: .7; }
+
+/* console server */
+#terminal, .xterm, .xterm-viewport { background: #000 !important; }
+.xterm { font-family: 'VT323', monospace !important; }
+
+/* progress bar */
+.bg-cyan-500.h-full, [class*="ProgressBar"] > div { background: var(--r-green) !important; }
+
+/* scrollbar retro */
+::-webkit-scrollbar { width: 14px; height: 14px; }
+::-webkit-scrollbar-track { background: #050805; border-left: 2px solid var(--r-line); }
+::-webkit-scrollbar-thumb { background: var(--r-dim); border: 2px solid #050805; }
+::-webkit-scrollbar-thumb:hover { background: var(--r-green); }
+
+/* ===== ADMIN PANEL (AdminLTE) ===== */
+.skin-blue .main-header .navbar,
+.skin-blue .main-header .logo,
+.skin-blue .main-header li.user-header {
+  background: #050805 !important;
+  border-bottom: 2px solid var(--r-green);
+  font-family: 'Press Start 2P', monospace !important; font-size: 12px;
+  color: var(--r-green) !important;
+}
+.skin-blue .main-header .navbar .nav > li > a { color: var(--r-green) !important; }
+.skin-blue .main-header .navbar .nav > li > a:hover { background: var(--r-bg3) !important; }
+
+.skin-blue .main-sidebar, .skin-blue .left-side, .skin-blue .wrapper { background: #070b07 !important; }
+.skin-blue .sidebar-menu > li > a { color: var(--r-green) !important; border-left: 3px solid transparent; }
+.skin-blue .sidebar-menu > li.active > a,
+.skin-blue .sidebar-menu > li:hover > a {
+  background: var(--r-bg3) !important; color: var(--r-amber) !important;
+  border-left: 3px solid var(--r-amber);
+}
+.skin-blue .sidebar-menu > li.header { background: #050805 !important; color: var(--r-dim) !important; }
+.skin-blue .sidebar-menu .treeview-menu { background: #050805 !important; }
+
+.content-wrapper, .right-side, .main-footer {
+  background: var(--r-bg) !important; border: 0 !important; color: var(--r-green) !important;
+}
+.box, .small-box, .info-box, .modal-content {
+  background: var(--r-bg2) !important; border: 2px solid var(--r-line) !important;
+  border-top: 2px solid var(--r-amber) !important; color: var(--r-green) !important;
+}
+.box-header, .box-footer, .modal-header, .modal-footer {
+  background: transparent !important; border-color: var(--r-line) !important;
+}
+.small-box > .inner h3, .small-box p { color: var(--r-green) !important; }
+.table > thead > tr > th, .table > tbody > tr > td {
+  border-color: var(--r-line) !important; color: var(--r-green) !important; background: transparent !important;
+}
+.table-hover > tbody > tr:hover { background: var(--r-bg3) !important; }
+.form-control { height: auto !important; }
+
+.btn-primary, .btn-success, .btn-info {
+  background: var(--r-amber) !important; border: 2px solid #000 !important; color: #000 !important;
+}
+.btn-danger { background: var(--r-red) !important; border: 2px solid #000 !important; color: #000 !important; }
+.btn-default { background: var(--r-bg3) !important; border: 2px solid var(--r-line) !important; color: var(--r-green) !important; }
+.label, .badge { border: 1px solid #000; }
+.callout, .alert { background: var(--r-bg3) !important; border: 2px solid var(--r-amber) !important; color: var(--r-amber) !important; }
+
+/* ===== halaman login ===== */
+#app > div:first-child form { border: 2px solid var(--r-green); box-shadow: 0 0 24px rgba(51,255,102,.3); }
